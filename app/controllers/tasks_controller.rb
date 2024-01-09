@@ -1,15 +1,15 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
-    render json: @tasks
+    render 'tasks/index'
   end
 
   def create
     task_params = params.require(:task).permit(:content)
     @task = Task.new(task_params)
 
-    if @task.save
-      render json: @task, status: :created
+    if @task.save!
+      render 'tasks/create', status: :created
     else
       render json: @task.errors, status: :unprocessable_entity
     end
@@ -17,19 +17,25 @@ class TasksController < ApplicationController
 
   def destroy
     task = Task.find(params[:id])
-    task.destroy
-    head :no_content
+
+    if task.destroy
+      render json: { success: true }
+    else
+      head :no_content
+    end
   end
-  
+
   def mark_complete
-    task = Task.find(params[:id])
-    task.update(completed: true)
-    
+    @task = Task.find(params[:id])
+    @task.update(completed: true)
+
+    render 'tasks/show'
   end
-  
+
   def mark_active
-    task = Task.find(params[:id])
-    task.update(completed: false)
-    
+    @task = Task.find(params[:id])
+    @task.update(completed: false)
+
+    render 'tasks/show'
   end
 end
