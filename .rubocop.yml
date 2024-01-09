@@ -1,0 +1,19 @@
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/EmptyMethod:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/NumericLiterals:
+  Exclude:
+    - db/**/*
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*
+Style/SymbolProc:
+  Exclude:
+    - db/**/*
+Metrics/BlockLength:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
