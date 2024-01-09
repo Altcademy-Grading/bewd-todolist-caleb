@@ -267,7 +267,6 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.4.2)
-    wdm (0.1.1)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -282,6 +281,7 @@ GEM
 PLATFORMS
   x64-mingw-ucrt
   x86_64-darwin-22
+  x86_64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
@@ -310,7 +310,6 @@ DEPENDENCIES
   turbolinks (~> 5.2.1)
   tzinfo-data
   uglifier (~> 4.2.0)
-  wdm (>= 0.1.0)
   web-console (>= 4.2)
   webrick (~> 1.7)
 
